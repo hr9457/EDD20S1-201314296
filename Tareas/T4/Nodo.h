@@ -8,17 +8,15 @@ using namespace std;
 class Nodo
 {
     private:
-        int carne;
-        string nombre;
+        char palabra;
         
     public:
         //siguiente y anterior publicos para los pueda acceder
         //con facilidad la lista 
         Nodo *siguiente;
         Nodo *anterior;
-        Nodo(int arg1,string arg2);
-        int getCarne();
-        string getNombre();
+        Nodo(char arg1);
+        char getPalabra();
         ~Nodo();
 };
 

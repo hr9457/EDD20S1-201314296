@@ -11,8 +11,8 @@ using namespace std;
 
 int main(){
     int opMenu;
-    int carne;
-    string nombre;
+    char caracter,concidencia;
+    string palabra;
     Lista List;
     do{
         system("cls");//para borrar en pantalla cuando repita el menu
@@ -20,7 +20,8 @@ int main(){
         cout<<"1. Instear "<<endl;
         cout<<"2. Mostar "<<endl;
         cout<<"3. Eliminar"<<endl;
-        cout<<"4. Salir"<<endl<<endl;
+        cout<<"4. Buscar"<<endl;
+        cout<<"5. Salir"<<endl<<endl;
         cout<<"INGRESE LA OPCION QUE DESEE REALIZAR: ";
         cin>>opMenu;
 
@@ -28,11 +29,9 @@ int main(){
         {
             case 1:
                 cout<<"ingrese datos para agregar a la lista"<<endl;
-                cout<<"Carne: ";
-                cin>>carne;
-                cout<<"Nombre: ";
-                cin>>nombre;
-                List.insertNodo(carne,nombre); 
+                cout<<"Caracter: ";
+                cin>>caracter;
+                List.insertPrimero(caracter);
                 getch();
                 break;
 
@@ -42,16 +41,25 @@ int main(){
                 break;
 
             case 3:
-                cout<<"eliminacion de nodo"<<endl;
+                cout<<"Eliminando nodo"<<endl;
+                List.deletNodo();
                 getch();
                 break;    
             
+            case 4:
+                cout<<"Ingrese una palabra: ";
+                cin>>palabra;
+                concidencia = palabra[0];
+                cout<<"caracter: "<<concidencia<<endl;
+                getch();
+                List.Buscar(concidencia);
+                break;
             default:
                 cout<<"opcion invalida"<<endl;
                 break;
         }
 
-    }while(opMenu != 4);
+    }while(opMenu != 5);
 
     getch();//espera en consola al usuario teclee para seguir
     

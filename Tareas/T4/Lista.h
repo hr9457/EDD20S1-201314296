@@ -18,9 +18,12 @@ class Lista
     public:
         Lista();
         bool statusList();
-        void insertNodo(int arg1, string arg2);
+        void insertUltimo(char palabra);
+        void insertPrimero(char palabra);
         void printList();
         void deletNodo();
+        void Buscar(char arg1);
+        ~Lista();
 };
 
 
